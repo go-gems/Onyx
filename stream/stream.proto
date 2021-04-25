@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package protobuf;
+option go_package = "github.com/go-gems/Onyx/stream";
+
+service StreamService{
+  rpc Connect(stream Instruction) returns (stream Instruction){}
+}
+
+message Instruction{
+  string from = 1;
+  string action = 2;
+  string content = 3;
+}
+
